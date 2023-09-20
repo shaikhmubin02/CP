@@ -3,35 +3,40 @@
 
 using namespace std;
 
-int binarySearch(int a[], int n, int key) {
+int binarySearch(int arr[], int n, int k) {
 
     int s=0;
     int e=n-1;
     int mid = s+(e-s)/2;
-    while(s<e) {
+    int ans=-1;
+    while(s<=e) {
 
-        if(a[mid]==key) {
+        if(arr[mid]==k) {
             return mid;
-        } else if(key>a[mid]) {
+
+        } else if(k>arr[mid]) {
             s=mid+1;
-        } else if(a[mid]>key) {
+        } else {
             e=mid-1;
         }
         mid=s+(e-s)/2;
     }
-    return -1;
+    return ans;
+    
 }
 
 int main() {
 
     int n;
     cin>>n;
+
     int a[n];
     rep(i,n) {
         cin>>a[i];
     }
     int key;
     cin>>key;
+    
     cout<<binarySearch(a,n,key);
     
 }
