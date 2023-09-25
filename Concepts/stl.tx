@@ -5,13 +5,15 @@ STL :
 3) function 
 4) iterator 
 
+1> Conatiner :-
+
 // Pair :-
 
 pair<int,int> p;
 cin>>p.first;
 cin>>p.second;
 
-(nested property of pair 
+-nested property of pair 
 
 pair<int,pair<int,int> p = {1,{2,3}};
 p.second.second; or p.second.first;
@@ -65,13 +67,13 @@ for(auto it : v) {
     cout<<*(it)<<" ";
 }
 
-(Delete function
+-Delete function
 
 vector = {20,10,15,67}
 v.erase(v.begin()+1); --> {20,15,67}
 v.erase(v.begin(),v.begin()+2); --> {15,67}
 
-(Insert function
+-Insert function
 
 vector<int> p(3,100); --> {100,100,100};
 v.insert(v.begin(),300); --> {300,100,100,100};
@@ -101,14 +103,20 @@ ls.emplace_back(4); -->{1,3,2,4}
 ls.push_front(5); --> {5,1,3,2,4} --> (similar to vectorb but less time complexity)
 ls.emplace_back(6); -->{6,5,1,3,2,4}
 
-(rest function are same as vector 
-(begin,end,rbegin,rend,insert,clear,swap,erase etc
+-rest function are same as vector 
+-begin,end,rbegin,rend,insert,clear,swap,erase etc
+// Deque :-
+
+deque<int> dq;
+-same as vector
+
 
 // Stack :-
 
-(lifo order : only 3 operation 1.push 2.pop, 3.top (** indexing not valid -- st[2]**)
+-LIFO order 
+-only 3 operation  :- 1.push 2.pop, 3.top (** indexing not valid -- st[2]**)
 
-( time complexity = O(1) : 
+-time complexity = O(1) : 
 
 stack <int> st;
 
@@ -128,6 +136,155 @@ cout<<st.empty(); --> true or false
 
 stack(int) st2;
 st.swap(st2); --> swap the elements
+
+// Queue :- 
+
+-FIFO
+queue<int> q;
+
+q.push(1); --> {1}
+q.pop(2); --> {1,2}
+q.emplace(4); --> {1,2,4}
+ 
+cout<<q.back()+=5; --> prints 9 (4+5)
+
+cout<<q.front(); --> prints 1
+
+q.pop() --> delete 1 & {2,4}
+
+
+// Priority Queue :-
+
+-Time complexity : push() & pop() --> log(n),top() --> O(1)
+
+priority_queue<int> pq;
+
+-maximum heap : (maximum element store at the top)
+pq.push(5); --> {5}
+pq.push(2); --> {5,2}
+pq.push(8); --> {8,5,2}
+pq.emplace(10); --> {10,8,5,2}
+
+cout<<pq.pop(); --> prints 10
+
+--minimum heap : (minimum element store at the top) 
+pq.push(5); --> {5}
+pq.push(2); --> {2,5}
+pq.push(8); --> {2,5,8}
+pq.emplace(10); --> {2,5,8,10}
+
+cout<<pq.top(); --> prints 2;
+
+// Set :- 
+
+-sorted
+-unique
+
+set<int> st;
+st.insert(1); -->{1}
+st.insert(2); --> {1,2}
+st.emplace(3); --> {1,2,3}
+
+-functionality same as vector
+
+{1,2,3,4,5}
+auto it = st.find(3); --> return iterator
+auto it = st.find(5); --> return st.end()
+
+st.erase(5); --> {1,2,3,4}
+
+int cnt = st.count(1) --> 1 or 0
+
+{1,2,3,4,5}
+
+auto it1 = st.find(2);
+auto it2 = st.find(4);
+st.erase(it1,it2); --> {1,4,5}
+
+// Multi set :-
+multiset<int> mst;
+-store duplicate (not unique)
+-same as set
+
+// Unorder set :-
+unordered_set<int> ust;
+
+- Not sorted (random order)
+- unique
+
+// Map :- 
+
+map(int,int) mpp;
+
+map(key,value) mpp;
+
+-map store unique key in sorted order *
+
+map<int, pair<int,int>> mpp;
+map<pair<int,int>, int> mpp;
+
+mpp[1] = 2; --> {1,2} --> 1=key & 2=value
+mpp.emplace({3,2});
+mpp.insert({2,3});
+
+mpp[{2,3}] = 10;
+
+{2,3}
+cout<<mpp[2]; --> prints 3
+
+for(auto it : mpp) {
+    cout<<it.first<<" "<<it.second; 
+}
+
+auto it = mpp.find(3);
+cout<<*(it).second;
+
+// Multi Map :-
+-store duplicate key --> [{1,2} , {1,3}]
+-same as map 
+
+// Unordered Map :- 
+-Not sorted
+-unique
+
+2> Algorithm :-
+
+sort(a,a+n);
+sort(v.begin(),v.end());
+
+sort(a+2,a+4); --> {only portion sorted}
+
+sort(a,a+n, greater<int>);
+sort(v.begin(), v.end(), greater<int>());
+  
+pair<int,int> a[] = {{1,2}, {2,1} , {4,1}};
+-sort according to second element  --> {{2,1}, {4,1}, {1,2}}
+-if second element is same than sort according to first element in descending order --> {{4,1}, {2,1}, {1,2}}
+
+sort(a,a+n, comp); --> {{4,1}, {2,1}, {1,2}}
+
+int n = 6; --> binary of 6 : 110
+int cnt = __builtin_popcount(); --> return setbit or 1's (110 = return 2 setbit)
+long long n = 1561653454;
+int cnt = __builtin_popcountll(); --> for long long 
+
+-permutation 
+-for printing all permuation first sort string *
+
+string s = "123";
+sort(s.begin,s.end());
+do {
+    cout<<s<<" ";
+} while(next_permutation(s.begin(),s.end()));
+
+-max and min 
+
+int maxi = *max_element(a,a+n);
+int mini = *min_element(a,a+n);
+
+
+
+
 
 
 
