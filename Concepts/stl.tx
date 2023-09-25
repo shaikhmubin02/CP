@@ -1,0 +1,143 @@
+STL : 
+
+1) algotithm 
+2) containers
+3) function 
+4) iterator 
+
+// Pair :-
+
+pair<int,int> p;
+cin>>p.first;
+cin>>p.second;
+
+(nested property of pair 
+
+pair<int,pair<int,int> p = {1,{2,3}};
+p.second.second; or p.second.first;
+
+pair<int,int> array[] = {{1,2}{2,3},{3,4}};
+arr[1].second;
+
+// Vector :-
+
+vector<int> v;
+v.push_back(1); or
+v.emplace_back(2);
+
+vector<pair<int,int> p;
+v.push_back({1,2});
+v.emplace_back(1,2); --> treart as pair (dont define to--> {})
+
+vector<int> p(5,100); --> {100,100,100,100,100};
+vector<int> p(5); -->{0,0,0,0,0}; or any grabage value(depend on compiler);
+
+vector<int> p1(5,20);
+vector<int> p1(p2); <-- copy of vector 
+
+cout<<v[0] or <<v.at(0) <-- avoid
+
+cout<<v.back(0);
+
+vector = {20,10,15,67}
+
+vector<int> :: iterator it = v.begin();
+it++;
+cout<<*(it)<<" "; --> 10
+it=it+2;
+cout<<*(it)<<" "; --> 6
+
+vector<int> :: iterator it = v.end(); --> point to the 67 plus (do it--)
+vector<int> :: iterator it = v.rend(); --> use in reverse way
+vector<int> :: iterator it = v.rbegin(); --> use in reverse way
+
+for(vector<int> :: iterator it =v.begin(); it!=v.end(); it++) {
+    cout<<*(it)<<" "; 
+}
+
+sort way --> vector<int> :: iterator it = auto it 
+
+for(auto it = v.begin(); it!=v.end(); it++) {
+    cout<<*(it)<<" ";
+}
+
+for(auto it : v) {
+    cout<<*(it)<<" ";
+}
+
+(Delete function
+
+vector = {20,10,15,67}
+v.erase(v.begin()+1); --> {20,15,67}
+v.erase(v.begin(),v.begin()+2); --> {15,67}
+
+(Insert function
+
+vector<int> p(3,100); --> {100,100,100};
+v.insert(v.begin(),300); --> {300,100,100,100};
+v.insert(v.begin()+1, 2, 10); --> {300,10,10,100,100,100};
+
+vector<int> copp(2,50);
+v.insert(v.begin(), copy.begin(), copy.end()); --> {50,50,300,10,10,100,100,100};
+
+cout<<v.size(); --> size of vector;
+v.pop_back(); // {100} 
+v1 = {10,20};
+v2 = {30,40};
+
+v1.swap(v2); --> v1={30,40} & v2={10,20};
+
+v.clear(); --> erase entire vector
+
+cout<<v.empty(); check weather vector is empy or not
+
+// List :-
+
+list<int> ls;
+ls = {1,3};
+ls.push_back(2); --> {1,3,2}
+ls.emplace_back(4); -->{1,3,2,4}
+
+ls.push_front(5); --> {5,1,3,2,4} --> (similar to vectorb but less time complexity)
+ls.emplace_back(6); -->{6,5,1,3,2,4}
+
+(rest function are same as vector 
+(begin,end,rbegin,rend,insert,clear,swap,erase etc
+
+// Stack :-
+
+(lifo order : only 3 operation 1.push 2.pop, 3.top (** indexing not valid -- st[2]**)
+
+( time complexity = O(1) : 
+
+stack <int> st;
+
+st.push(1); --> {1}
+st.push(2); --> {2,1}
+st.push(3); --> {3,2,1}
+st.push(4); --> {4,3,2,1}
+st.emplace(5); --> {5,4,3,2,1}
+
+cout<<st.top(); --> prints 5
+
+st.pop() --> (remove element) : {4,3,2,1}
+
+cout<<st.top(); --> 4
+cout<<st.size(); --> size : 4
+cout<<st.empty(); --> true or false
+
+stack(int) st2;
+st.swap(st2); --> swap the elements
+
+
+
+
+
+
+
+
+
+
+
+
+
