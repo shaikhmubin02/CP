@@ -20,6 +20,8 @@ void solve(int tc) {
     ll a,b,c;
     cin>>a>>b>>c;
     
+    // failed some test cases
+
     //sol 1 
     ll q = c/a;
     ll ans1 = q;
