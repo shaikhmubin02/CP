@@ -3,3 +3,7 @@ Notes for Ccompatitive Programing :
 shortcuts :-
 
 #define rep(i,n) for(int i=0; i<(int)(n); i++)
+
+-concatinate two array :
+copy(a,a+n,c);
+copy(b,b+m,c+n);
