@@ -1,1 +1,6 @@
 1.Number System
+
+divisior = 
+
+primalty(prime)
+

@@ -17,7 +17,9 @@ void Go() {
 
 void solve() {
     
-    cout<<"hello world"<<"\n";
+    //start here 
+    int t;
+    cin>>t;
 }
 
 int main() {
