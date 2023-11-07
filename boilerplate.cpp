@@ -18,8 +18,6 @@ void Go() {
 void solve() {
     
     //start here 
-    int t;
-    cin>>t;
 }
 
 int main() {
