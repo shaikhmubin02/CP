@@ -7,3 +7,5 @@ shortcuts :-
 -concatinate two array :
 copy(a,a+n,c);
 copy(b,b+m,c+n);
+
+isalpha() and isdigit() 
