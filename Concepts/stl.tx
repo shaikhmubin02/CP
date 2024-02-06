@@ -284,7 +284,10 @@ int mini = *min_element(a,a+n);
 
 // Binary Search
 
-binary_search(a.begin(), a.end(), 5); // find 5 in array/vector return true/false
+int x = binary_search(a.begin(), a.end(), 5); // find 5 in array/vector return true/false
+
+int x = *lower_bound(a.begin(), a.end(), 5);
+int x = *upper_bound(a.begin(), a.end(), 5);
 
 
 
