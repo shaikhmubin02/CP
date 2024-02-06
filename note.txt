@@ -7,3 +7,15 @@ shortcuts :-
 -concatinate two array :
 copy(a,a+n,c);
 copy(b,b+m,c+n);
+
+isalpha() and isdigit() 
+
+String function : 
+str.find("...");
+count(str.begin(), str.end(), '.');
+
+sort(b,b+n);
+sort(a+1,a+n);
+bool isEqual = equal(a,a+n, b,b+n);
+if(isEqual) cout<<"YES"<<"\n";
+else cout<<"NO"<<"\n";
