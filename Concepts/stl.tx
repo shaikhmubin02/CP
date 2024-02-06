@@ -67,6 +67,12 @@ for(auto it : v) {
     cout<<*(it)<<" ";
 }
 
+vector<pair<int,int>> s;
+
+for(auto [a,b]: v) {
+
+}
+
 -Delete function
 
 vector = {20,10,15,67}
